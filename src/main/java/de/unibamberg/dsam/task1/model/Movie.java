@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Movie {
+    //TODO: Need to add data validation
     private String id;
     private String title;
     private boolean wonOscar;

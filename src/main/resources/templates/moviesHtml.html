@@ -25,6 +25,17 @@
         <td th:text="${movie.year}"></td>
     </tr>
 
+    <form method="post" th:action="@{/movies}" th:object="${movie}">
+        <tr>
+            <td> URL: <input name="coverImage" th:field="*{coverImage}" type="text"/></td>
+            <td><input name="title" th:field="*{title}" type="text"/></td>
+            <td><input name="wonOscar" th:field="*{wonOscar}" type="checkbox"></td>
+            <td><input name="year" th:field="*{year}" type="text"></td>
+            <td>
+                <button>Create</button>
+            </td>
+        </tr>
+    </form>
 
     </tbody>
 
