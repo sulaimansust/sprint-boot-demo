@@ -27,7 +27,9 @@
 
     <form method="post" th:action="@{/movies}" th:object="${movie}">
         <tr>
-            <td> URL: <input name="coverImage" th:field="*{coverImage}" type="text"/></td>
+            <td> URL: <input name="coverImage" th:field="*{coverImage}" type="text"/>
+                <span class="text-danger" th:if="${#fields.hasErrors('coverImage')}" th:errors="*{coverImage}"></span>
+            </td>
             <td><input name="title" th:field="*{title}" type="text"/></td>
             <td><input name="wonOscar" th:field="*{wonOscar}" type="checkbox"></td>
             <td><input name="year" th:field="*{year}" type="text"></td>
