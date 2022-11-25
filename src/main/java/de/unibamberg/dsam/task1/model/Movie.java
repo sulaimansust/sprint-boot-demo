@@ -4,14 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.validation.constraints.*;
 
 /// Generate getter and setters.
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Movie {
-    //TODO: Need to add data validation
+    @Id
     private String id;
     @NotNull(message = "Title must be set ")
     @NotEmpty(message = "Title not there")
@@ -22,4 +25,5 @@ public class Movie {
     private int year;
     @Pattern(regexp = "(https:\\/\\/).*\\.(?:jpg|gif|png|jpeg)", message = "Must be a valid URL to a picture.")
     private String coverImage;
+//    private List<Actor> actors;
 }
