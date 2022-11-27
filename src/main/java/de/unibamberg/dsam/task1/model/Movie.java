@@ -1,17 +1,16 @@
 package de.unibamberg.dsam.task1.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /// Generate getter and setters.
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class Movie {
     @Id
@@ -22,8 +21,6 @@ public class Movie {
     private boolean wonOscar;
     @Min(value = 1920, message = "No movies in ancient times.")
     @Max(value = 2022, message = "No movies planned after this year")
-    private int year;
-    @Pattern(regexp = "(https:\\/\\/).*\\.(?:jpg|gif|png|jpeg)", message = "Must be a valid URL to a picture.")
+    private int releaseYear;
     private String coverImage;
-//    private List<Actor> actors;
 }

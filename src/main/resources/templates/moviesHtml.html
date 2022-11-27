@@ -22,7 +22,7 @@
         <td><img width="120" th:src="${movie.coverImage}"/></td>
         <td th:text="${movie.title}"></td>
         <td th:text="${movie.wonOscar}"></td>
-        <td th:text="${movie.year}"></td>
+        <td th:text="${movie.getReleaseYear}"></td>
     </tr>
 
     <form method="post" th:action="@{/movies}" th:object="${movie}">
@@ -32,7 +32,7 @@
             </td>
             <td><input name="title" th:field="*{title}" type="text"/></td>
             <td><input name="wonOscar" th:field="*{wonOscar}" type="checkbox"></td>
-            <td><input name="year" th:field="*{year}" type="text"></td>
+            <td><input name="year" th:field="*{releaseYear}" type="text"></td>
             <td>
                 <button>Create</button>
             </td>
